@@ -92,3 +92,60 @@ document.addEventListener("DOMContentLoaded", () => {
         boxResultado.classList.remove("hidden");
     });
 });
+function esPrimo(numero) {
+    if (numero <= 1) return false;
+    let contador = 0;
+    for (let i = 1; i <= numero; i++) {
+        if (numero % i === 0) {
+            contador++;
+        }
+    }
+    return contador === 2;
+}
+
+function procesarSecuencia() {
+    const inputTerminos = document.getElementById("cantidadTerminos");
+    const contenedorResultados = document.getElementById("resultadoContenedor");
+    const listaNumeros = document.getElementById("listaNumeros");
+    
+    if (!inputTerminos || !contenedorResultados || !listaNumeros) return;
+
+    const cantidad = parseInt(inputTerminos.value);
+    
+    listaNumeros.innerHTML = "";
+    
+    let a = 0;
+    let b = 1;
+    let c;
+    
+    for (let i = 1; i <= cantidad; i++) {
+        let numeroActual = a;
+        
+        const badge = document.createElement("div");
+        badge.classList.add("number-badge");
+        badge.textContent = numeroActual;
+        
+        if (esPrimo(numeroActual)) {
+            badge.classList.add("is-prime");
+        }
+        
+        listaNumeros.appendChild(badge);
+        
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    
+    contenedorResultados.classList.remove("hidden");
+}
+
+// NUEVO: Escuchador nativo para evitar que la página falle en producción
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.getElementById("fibonacciForm");
+    if (formulario) {
+        formulario.addEventListener("submit", (event) => {
+            event.preventDefault(); // Evita que la página se recargue
+            procesarSecuencia();    // Ejecuta la lógica
+        });
+    }
+});
