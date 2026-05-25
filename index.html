@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Web: Fibonacci y Primos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</h1>
+        <p class="author">Estudiante: Sergio Fernando Mariscal Flores</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Contexto del Problema</h2>
+            <p>En el análisis de datos y la seguridad informática, la combinación de patrones naturales (Fibonacci) con propiedades de exclusividad numérica (Primos) permite generar identificadores y estudiar la distribución de frecuencias en sistemas complejos.</p>
+        </section>
+
+        <section class="card">
+            <h2>Explicación de los Algoritmos</h2>
+            <div class="grid-info">
+                <div>
+                    <h3>Serie de Fibonacci</h3>
+                    <p>Es una secuencia donde cada número se obtiene sumando los dos anteriores (0, 1, 1, 2, 3, 5, 8...). Se calcula mediante un ciclo iterativo sumando variables simples.</p>
+                </div>
+                <div>
+                    <h3>Números Primos</h3>
+                    <p>Un número es primo si solo es divisible exactamente entre 1 y sí mismo. Lo verificamos contando cuántos divisores exactos tiene desde el 1 hasta el número evaluado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card interactive-section">
+            <h2>Generador y Analizador</h2>
+            <form id="fibonacciForm" onsubmit="event.preventDefault(); procesarSecuencia();">
+                <div class="form-group">
+                    <label for="cantidadTerminos">Cantidad de términos a generar:</label>
+                    <input type="number" id="cantidadTerminos" min="1" max="50" required placeholder="Ej. 10">
+                </div>
+                <button type="submit" class="btn-submit">Generar y Analizar</button>
+            </form>
+
+            <div id="resultadoContenedor" class="result-box hidden">
+                <h3>Resultados de la Secuencia:</h3>
+                <div id="listaNumeros" class="numbers-grid"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Conclusión</h2>
+            <p>La integración de algoritmos matemáticos en plataformas interactivas demuestra que la teoría numérica puede visualizarse de forma intuitiva, facilitando la identificación de patrones clave para aplicaciones técnicas reales.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Enlaces del Proyecto:</p>
+        <div class="footer-links">
+            <a id="linkRepo" href="https://github.com/tu-usuario/tu-repositorio" target="_blank">Repositorio Git</a>
+            <a id="linkDeploy" href="https://tu-usuario.github.io/tu-repositorio/" target="_blank">Sitio Web Publicado</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
