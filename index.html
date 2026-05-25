@@ -35,13 +35,14 @@
 
         <section class="card interactive-section">
             <h2>Generador y Analizador</h2>
-            <form id="fibonacciForm" onsubmit="event.preventDefault(); procesarSecuencia();">
-                <div class="form-group">
-                    <label for="cantidadTerminos">Cantidad de términos a generar:</label>
-                    <input type="number" id="cantidadTerminos" min="1" max="50" required placeholder="Ej. 10">
-                </div>
-                <button type="submit" class="btn-submit">Generar y Analizar</button>
+            <form id="fibonacciForm">
+    <div class="form-group">
+        <label for="cantidadTerminos">Cantidad de términos a generar:</label>
+        <input type="number" id="cantidadTerminos" min="1" max="50" required placeholder="Ej. 10">
+    </div>
+    <button type="submit" id="btnGenerar" class="btn-submit">Generar y Analizar</button>
             </form>
+            
 
             <div id="resultadoContenedor" class="result-box hidden">
                 <h3>Resultados de la Secuencia:</h3>
